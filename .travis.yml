@@ -1,5 +1,5 @@
 language: csharp
-solution: Test CLI.sln
+solution: "./Test CLI/Test CLI.sln"
 mono: none
 dotnet: 2.1.3
 
