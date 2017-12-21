@@ -11,12 +11,13 @@ namespace CLI.Test
         private Process process;
         private string testFolderPath;
         private string workingDirectory;
+        private string solutionRootPath;
 
         [TestInitialize]
         public void Initialize()
         {
             var currenPath = Directory.GetCurrentDirectory();
-            var solutionRootPath = Directory.GetParent(currenPath).Parent.Parent.Parent.FullName;
+            solutionRootPath = Directory.GetParent(currenPath).Parent.Parent.Parent.FullName;
             this.workingDirectory = Path.Combine(solutionRootPath, "CLI", "bin", "Debug", "netcoreapp2.0");
 
             // create Test folder, where file will be created. It will be deleted the test ends afterwards 
@@ -59,7 +60,8 @@ namespace CLI.Test
 
             var expectedOutput = new StringBuilder();
             expectedOutput.AppendLine(string.Format("File created. Path: {0}", expectedFilePath));
-            Assert.AreEqual(expectedOutput.ToString(), outputString);
+            var message = string.Format("test Folder path: {0}, working dir: {1}, solution path {2}", testFolderPath, workingDirectory, solutionRootPath);
+            Assert.AreEqual(expectedOutput.ToString(), outputString, message);
             
             Assert.IsTrue(File.Exists(expectedFilePath));
         }
