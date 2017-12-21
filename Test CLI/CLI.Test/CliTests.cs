@@ -61,7 +61,7 @@ namespace CLI.Test
             var expectedOutput = new StringBuilder();
             expectedOutput.AppendLine(string.Format("File created. Path: {0}", expectedFilePath));
             var message = string.Format("test Folder path: {0}, working dir: {1}, solution path {2}", testFolderPath, workingDirectory, solutionRootPath);
-            //Assert.AreEqual(expectedOutput.ToString(), outputString, message);
+            Assert.AreEqual(expectedOutput.ToString(), outputString, message);
             
             Assert.IsTrue(File.Exists(expectedFilePath));
         }
