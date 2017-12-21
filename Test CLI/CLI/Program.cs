@@ -10,7 +10,13 @@ namespace CLI
     {
         public static void Main(string[] args)
         {
-            CommandLineApplication.Execute<Program>(args);
+            try{
+                CommandLineApplication.Execute<Program>(args);
+            }
+            catch(Exception e){
+                Console.WriteLine(e.Message);
+            }
+            
         }
 
         protected int OnExecute(CommandLineApplication app)
