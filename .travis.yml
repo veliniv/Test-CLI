@@ -1,8 +1,7 @@
 language: csharp
-solution: "./Test CLI/Test CLI.sln"
 mono: none
 dotnet: 2.1.3
 
 script:
-  - dotnet restore
+  - dotnet restore "./Test CLI/Test CLI.sln"
   - dotnet build -r linux-x64
