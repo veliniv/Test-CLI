@@ -18,7 +18,7 @@ namespace CLI.Test
         {
             var currenPath = Directory.GetCurrentDirectory();
             solutionRootPath = Directory.GetParent(currenPath).Parent.Parent.Parent.FullName;
-            this.workingDirectory = Path.Combine(solutionRootPath, "CLI", "bin", "Debug", "netcoreapp2.0");
+            this.workingDirectory = Path.Combine(solutionRootPath, "CLI", "bin", "Debug", "netcoreapp2.0", "ubuntu.14.04-x64");
 
             // create Test folder, where file will be created. It will be deleted the test ends afterwards 
             this.testFolderPath = Path.Combine(currenPath, "Test");
