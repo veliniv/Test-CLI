@@ -4,4 +4,4 @@ dotnet: 2.1.3
 
 script:
   - dotnet restore "./Test CLI/Test CLI.sln"
-  - dotnet build -r linux-x64
+  - dotnet build -r linux-x64 "./Test CLI/Test CLI.sln"
