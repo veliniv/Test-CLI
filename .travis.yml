@@ -5,4 +5,4 @@ dotnet: 2.1.3
 script:
   - dotnet restore "./Test CLI/Test CLI.sln"
   - dotnet build -r ubuntu.14.04-x64 "./Test CLI/Test CLI.sln"
-  - dotnet test "/home/travis/build/veliniv/Test-CLI/Test CLI/CLI.Test"
+  - dotnet "/home/travis/build/veliniv/Test-CLI/Test CLI/CLI/bin/Debug/netcoreapp2.0/cli.dll" create
